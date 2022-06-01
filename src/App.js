@@ -18,7 +18,7 @@ const resetCounter = () => {
 
 return (
 
-  <div className="App">
+  <div className="App min-h-screen">
       <div className='logo object-contain h-48 w-52'>
         <img
           className='logo'
