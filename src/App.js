@@ -2,17 +2,21 @@ import logo from './img/logo.png';
 import './App.css';
 import Button from './components/button';
 import Counter from './components/counter';
+import { useState } from 'react';
 
 function App() {
 
+  const [numClicks,setNumClicks] = useState (0);
+
 const handleClick = () => {
 
-  console.log('Clicked!');
+  setNumClicks(numClicks + 1);
   
 }
 const resetCounter = () => {
 
-  console.log('Reset!');
+  setNumClicks(0);
+  
   
 }
 
@@ -26,7 +30,8 @@ return (
           alt='logo' />
       </div>
       <div className='container flex flex-wrap flex-col align-center justify-center'>
-        <Counter  numClicks='5'/>
+        <p className='min-w-[50%] h-38 text-3xl p-3 flex justify-center   mb-2'>Count your clicks!</p>
+        <Counter  numClicks={ numClicks }/>
         <Button
             text='Click'
             click={true}
