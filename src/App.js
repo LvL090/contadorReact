@@ -1,7 +1,7 @@
 import logo from './img/logo.png';
 import './App.css';
 import Button from './components/button';
-
+import Counter from './components/counter';
 
 function App() {
 
@@ -18,22 +18,23 @@ const resetCounter = () => {
 
 return (
 
-  <div className="App min-h-screen">
-      <div className='logo object-contain h-48 w-52'>
+  <div className="App h-screen">
+      <div className='logo object-contain h-48 w-52 mb-8'>
         <img
           className='logo'
           src ={logo}
           alt='logo' />
       </div>
-      <div className='container'>
+      <div className='container flex flex-wrap flex-col align-center justify-center'>
+        <Counter  numClicks='5'/>
         <Button
             text='Click'
             click={true}
-            handleClick={handleClick}/>
+            handleClick={handleClick} />
         <Button
           text='restart'
           click={false}
-          handleClick={resetCounter}/>
+          handleClick={resetCounter} />
       </div>
   </div>
 );
